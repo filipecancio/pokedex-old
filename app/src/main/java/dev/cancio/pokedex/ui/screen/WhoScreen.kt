@@ -5,5 +5,5 @@ import androidx.compose.runtime.Composable
 
 @Composable
 fun WhoScreen(){
-    Text(text = "Liked Screen")
+    Text(text = "Who Screen")
 }

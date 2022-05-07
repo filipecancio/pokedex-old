@@ -5,5 +5,5 @@ import androidx.compose.runtime.Composable
 
 @Composable
 fun SearchScreen(){
-    Text(text = "Liked Screen")
+    Text(text = "Search Screen")
 }
