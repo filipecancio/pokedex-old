@@ -23,6 +23,8 @@ import dev.cancio.pokedex.ui.component.BottomBar
 import dev.cancio.pokedex.ui.component.NavItem
 import dev.cancio.pokedex.ui.screen.HomeScreen
 import dev.cancio.pokedex.ui.screen.LikedScreen
+import dev.cancio.pokedex.ui.screen.SearchScreen
+import dev.cancio.pokedex.ui.screen.WhoScreen
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -57,5 +59,7 @@ fun Navigation(navController: NavHostController) {
     NavHost(navController = navController, startDestination = NavItem.Home.route){
         composable(NavItem.Home.route) { HomeScreen()}
         composable(NavItem.Likes.route) { LikedScreen() }
+        composable(NavItem.Search.route) { SearchScreen() }
+        composable(NavItem.Who.route) { WhoScreen() }
     }
 }
