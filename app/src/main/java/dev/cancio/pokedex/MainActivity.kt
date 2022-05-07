@@ -14,9 +14,10 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.navigation.compose.rememberNavController
 import dev.cancio.pokedex.navigation.MainNavigation
-import dev.cancio.pokedex.navigation.BottomNavItem.*
+import dev.cancio.pokedex.navigation.PokedexRoutes.MainRoute
 import dev.cancio.pokedex.theme.PokedexTheme
 import dev.cancio.pokedex.component.BottomBar
+import dev.cancio.pokedex.navigation.BottomNavItem
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -36,11 +37,10 @@ fun AppScreen() {
             color = MaterialTheme.colors.background
         ) {
             val navController = rememberNavController()
-            val itemList = listOf(Home, Search, Likes, Who)
             Scaffold(
-                bottomBar = { BottomBar(navController, itemList) }
+                bottomBar = { BottomBar(navController, MainRoute.itemList) }
             ) {
-                MainNavigation(navController, itemList )
+                MainNavigation(navController, MainRoute.itemList )
             }
         }
     }
