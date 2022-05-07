@@ -6,10 +6,10 @@ import androidx.compose.material3.NavigationBarItem
 import androidx.compose.material3.Text
 import androidx.compose.runtime.*
 import androidx.navigation.NavController
-import dev.cancio.pokedex.navigation.BaseNavItem
+import dev.cancio.pokedex.navigation.BottomNavItem
 
 @Composable
-fun BottomBar(navController: NavController, itemList: List<BaseNavItem>) {
+fun BottomBar(navController: NavController, itemList: List<BottomNavItem>) {
     var selectedItem by remember { mutableStateOf(0) }
 
     NavigationBar {

@@ -18,22 +18,21 @@ import dev.cancio.pokedex.ui.screen.WhoScreen
 import dev.cancio.pokedex.navigation.BottomNavItem.*
 
 @Composable
-fun MainNavigation(navController: NavHostController, itemList: List<BaseNavItem>) {
+fun MainNavigation(navController: NavHostController, itemList: List<BottomNavItem>) {
     NavHost(navController = navController, startDestination = itemList.first().route) {
         itemList.forEach { item -> composable(item.route) { item.screen.invoke() } }
     }
 }
 
-sealed class PokedexRoutes(val itemList: List<BaseNavItem>){
+sealed class PokedexRoutes(val itemList: List<BottomNavItem>){
     object MainRoute: PokedexRoutes(listOf(Home, Search, Likes, Who))
 }
 
 sealed class BottomNavItem(
-    override val route: String,
-    override val icon: ImageVector,
-    override val title: String,
-    override val screen: (@Composable () -> Unit)
-) : BaseNavItem(route, icon, title, screen) {
+    val route: String,
+    val icon: ImageVector,
+    val title: String,
+    val screen: (@Composable () -> Unit)) {
     object Home : BottomNavItem("home", Icons.Filled.Home, "Home", { HomeScreen() })
     object Likes : BottomNavItem("likes", Icons.Filled.Favorite, "Likes", { LikedScreen() })
     object Search : BottomNavItem("search", Icons.Filled.Search, "Search", { SearchScreen() })
