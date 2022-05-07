@@ -1,4 +1,4 @@
-package dev.cancio.pokedex.ui.theme
+package dev.cancio.pokedex.theme
 
 import androidx.compose.ui.graphics.Color
 
