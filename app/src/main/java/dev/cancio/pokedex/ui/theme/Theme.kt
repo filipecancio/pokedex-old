@@ -1,4 +1,4 @@
-package dev.cancio.pokedex.theme
+package dev.cancio.pokedex.ui.theme
 
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material.MaterialTheme
