@@ -1,26 +1,16 @@
-package dev.cancio.pokedex.ui.component
+package dev.cancio.pokedex.component
 
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.*
 import androidx.compose.material3.Icon
 import androidx.compose.material3.NavigationBar
 import androidx.compose.material3.NavigationBarItem
 import androidx.compose.material3.Text
 import androidx.compose.runtime.*
-import androidx.compose.ui.graphics.vector.ImageVector
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.NavController
-import dev.cancio.pokedex.ui.screen.HomeScreen
+import dev.cancio.pokedex.navigation.BaseNavItem
 
 @Composable
-fun BottomBar(navController: NavController) {
+fun BottomBar(navController: NavController, itemList: List<BaseNavItem>) {
     var selectedItem by remember { mutableStateOf(0) }
-    val itemList: List<NavItem> = listOf(
-        NavItem.Home,
-        NavItem.Search,
-        NavItem.Likes,
-        NavItem.Who
-    )
 
     NavigationBar {
         itemList.forEachIndexed { index, item ->
@@ -43,12 +33,4 @@ fun BottomBar(navController: NavController) {
             )
         }
     }
-}
-
-
-sealed class NavItem(var route: String, var icon: ImageVector, var title: String) {
-    object Home : NavItem("home", Icons.Filled.Home, "Home")
-    object Likes : NavItem("likes", Icons.Filled.Favorite, "Likes")
-    object Search : NavItem("search", Icons.Filled.Search, "Search")
-    object Who : NavItem("who", Icons.Filled.Face, "Who")
 }
